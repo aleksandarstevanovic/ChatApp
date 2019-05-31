@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/aleksandarstevanovic/chatapp/static/css/main.208d9942.chunk.css",
-    "main.js": "/aleksandarstevanovic/chatapp/static/js/main.0713c477.chunk.js",
-    "main.js.map": "/aleksandarstevanovic/chatapp/static/js/main.0713c477.chunk.js.map",
-    "runtime~main.js": "/aleksandarstevanovic/chatapp/static/js/runtime~main.7f4a5ad2.js",
-    "runtime~main.js.map": "/aleksandarstevanovic/chatapp/static/js/runtime~main.7f4a5ad2.js.map",
-    "static/js/2.26018eed.chunk.js": "/aleksandarstevanovic/chatapp/static/js/2.26018eed.chunk.js",
-    "static/js/2.26018eed.chunk.js.map": "/aleksandarstevanovic/chatapp/static/js/2.26018eed.chunk.js.map",
-    "index.html": "/aleksandarstevanovic/chatapp/index.html",
-    "precache-manifest.8d9752ead5fc6070491cc4c2d93c2632.js": "/aleksandarstevanovic/chatapp/precache-manifest.8d9752ead5fc6070491cc4c2d93c2632.js",
-    "service-worker.js": "/aleksandarstevanovic/chatapp/service-worker.js",
-    "static/css/main.208d9942.chunk.css.map": "/aleksandarstevanovic/chatapp/static/css/main.208d9942.chunk.css.map"
+    "main.css": "/chatapp/static/css/main.208d9942.chunk.css",
+    "main.js": "/chatapp/static/js/main.87a03b8c.chunk.js",
+    "main.js.map": "/chatapp/static/js/main.87a03b8c.chunk.js.map",
+    "runtime~main.js": "/chatapp/static/js/runtime~main.e147c499.js",
+    "runtime~main.js.map": "/chatapp/static/js/runtime~main.e147c499.js.map",
+    "static/js/2.96135142.chunk.js": "/chatapp/static/js/2.96135142.chunk.js",
+    "static/js/2.96135142.chunk.js.map": "/chatapp/static/js/2.96135142.chunk.js.map",
+    "index.html": "/chatapp/index.html",
+    "precache-manifest.9ea5e09915d0493c5af070823c11ed03.js": "/chatapp/precache-manifest.9ea5e09915d0493c5af070823c11ed03.js",
+    "service-worker.js": "/chatapp/service-worker.js",
+    "static/css/main.208d9942.chunk.css.map": "/chatapp/static/css/main.208d9942.chunk.css.map"
   }
 }
