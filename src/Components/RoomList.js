@@ -1,29 +1,37 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
-  class RoomList extends Component {
-      render() {
 
+  const RoomList=props=>{ 
           return(
             <div className='room-list'>
             <ul>
             <h2>ROOMS:</h2>
             <hr/>
-            {this.props.rooms.map(room=>{
-              const active=this.props.roomId===room.id ? 'active':'';
+           
+            {props.rooms.map(room=>{
+              const active=props.currentRoom===room.id ? 'active':'';
 
               return(
                 <li key={room.id} className={'room ' + active}>
-                 <a onClick={()=>this.props.subscribeToRoom(room.id)}
-                 href="#">#{room.name}</a>
+                 <a href="/#" onClick={()=>props.subscribe(room.id,props.user)}
+                 >#{room.name}</a>
                 </li>
               )
             }
 
             )}
+             
             </ul>
-
+         
             </div>
           )
       }
+
+  RoomList.propTypes={
+   rooms:PropTypes.array,
+   currentRoom:PropTypes.string,
+   user:PropTypes.object,
+   subscribe:PropTypes.func.isRequired
   }
   export default RoomList;

@@ -1,43 +1,43 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 
-  class NewRoomForm extends Component {
-  constructor(){
-    super()
-    this.state={
-      roomName:''
-    }
-    this.handleChange=this.handleChange.bind(this);
-    this.handleSubmit=this.handleSubmit.bind(this);
-  }
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(0),
+    marginRight: theme.spacing(1),
+  },
+}));
 
-
-  handleChange(e){
-    this.setState({
-      roomName:e.target.value
-    })
-  }
-
-  handleSubmit(e){
-    e.preventDefault()
-    this.props.createRoom(this.state.roomName)
-    this.setState({roomName:''})
-  }
-
-      render() {
-          return(
-
-                <form onSubmit={this.handleSubmit} className="new-room-form">
-                <input
-                className='room-input'
-                value={this.state.roomName}
-                onChange={this.handleChange}
-                type='text' placeholder='Create a room'/>
+ const NewRoomForm=props=> {
+       let input
+       const classes=useStyles();
+      return(
+      <form onSubmit={(e)=> { return props.handleSubmit(e),input.value=''}} className="new-room-form">
+      <TextField
+       id="room"
+        label="Create room"
+        className={classes.textField}
+        type="text"
+        autoComplete="off"
+        margin="normal"
+        fullWidth
+        inputRef={node => {
+            input = node;
+          }}
+      />
                 <button className="submit room-button"></button>
                 </form>
-
-              
           )
-      }
+      
+  }
+  NewRoomForm.propTypes={
+        handleSubmit:PropTypes.func.isRequired
   }
   export default NewRoomForm;
