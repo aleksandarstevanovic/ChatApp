@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import { Scrollbars } from 'react-custom-scrollbars';
 
   class MessageList extends Component {
  componentDidUpdate(){
@@ -9,9 +10,10 @@ import PropTypes from 'prop-types'
  }
 
       render() {
-        console.log(this.props.currentUser)
+       
         if(!this.props.currentRoom){
           return(
+          
             <div className='message-list'>
             <div className='join-room'>
             &larr;Join a room!
@@ -22,17 +24,29 @@ import PropTypes from 'prop-types'
         else{
 
           return(
-
+           
               <ul className="message-list">
+                 <Scrollbars
+                  style={{ height: '100%' }}          
+                  >
                   {this.props.messages.map((message, index) => (
                       <li key={index}>
-                          <p className="message-sender">{message[0]}</p>
-                          <p className={this.props.currentUser===message[0]? 'sent-messages':'received-messages'}>{message[1]}</p>
+                          <div className='message'>
+                          <img src={`${message[3]}`} className='profile-photo' alt='profile'/>
+                          <div className='message-details'>
+                          <div className='date-name'>
+                          <span className="message-sender">{`${message[0]}`}</span>
+                          <span className="message-date">{` ${message[2].slice(11,16)} PM`}</span>
+                          </div>
+                          <div className='message-text'>
+                          <p className='texte'>{message[1]}</p>
+                          </div>
+                          </div>
+                          </div>
                       </li>
-                  ))}
-                  <li></li>
-              </ul>
-
+                  ))}                    
+                  </Scrollbars>
+              </ul> 
           )
       }
     }

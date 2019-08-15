@@ -4,9 +4,7 @@ import {createRoom} from '../actions/Index'
 
 const mapDispatchProps=dispatch=>({
     handleSubmit:(e)=>{
-        console.log(e)
         dispatch(createRoom(e.target[0].value))
-        
         e.preventDefault()
     },
     

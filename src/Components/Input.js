@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -16,15 +16,14 @@ const useStyles = makeStyles(theme => ({
   }));
 
  const Input=props=> {
-    const classes = useStyles();
-    let input
-   
-     
-         return (
-             <form onSubmit={(e)=>{return  props.dispatch(e),input.value=''}} className="input-field">
-                  <TextField
+    const classes = useStyles()
+    let input 
+        return (
+        <form onSubmit={(e)=>{return  props.dispatch(e),input.value=''}} className="input-field">
+        <TextField
+        disabled={props.currentRoom? false:true}
         id="message"
-        label="Enter Message"
+        label="Type a Message"
         className={classes.textField}
         type="text"
         autoComplete="off"
@@ -35,12 +34,13 @@ const useStyles = makeStyles(theme => ({
         }}
         
       />
-      <button className="submit send-button" ></button>
+      <button className="submit send-button" disabled={props.currentRoom? false:true} ></button>
              </form>
          )
  }
 
  Input.propTypes={
-    dispatch:PropTypes.func.isRequired 
+    dispatch:PropTypes.func.isRequired, 
+    currentRoom:PropTypes.string
  }
  export default Input;

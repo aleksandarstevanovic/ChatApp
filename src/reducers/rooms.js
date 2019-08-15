@@ -1,7 +1,8 @@
 import * as types from '../constants/ActionTypes'
 
 const initialState={
-    currentRoom: null,
+    currentRoomId: null,
+    currentRoomName:'',
     joinableRooms:[],
     joinedRooms:[]
 }
@@ -18,7 +19,8 @@ const rooms=(state=initialState,action)=>{
             });
         case types.ENTER_ROOM:
             return Object.assign({},state,{
-                currentRoom:action.payload
+                currentRoomId:action.payload.roomId,
+                currentRoomName:action.payload.roomName
             })
             default:
                 return state;

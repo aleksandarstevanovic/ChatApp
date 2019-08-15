@@ -12,6 +12,7 @@
     "gh-pages": "^2.0.1",
     "material-ui": "^1.0.0-beta.47",
     "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",

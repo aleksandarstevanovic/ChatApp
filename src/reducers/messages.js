@@ -1,13 +1,10 @@
 import * as types from '../constants/ActionTypes'
 
 const initialState={
-    
-  messagess:[],
-  
+  messages:[],
 }
-
 const message=(state=initialState,action)=>{
-   console.log(action.payload)
+   
     switch(action.type){
         case types.MESSAGE_SENT:
             return Object.assign({},state,{

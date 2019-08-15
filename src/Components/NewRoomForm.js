@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 
  const NewRoomForm=props=> {
        let input
-       const classes=useStyles();
+       const classes=useStyles()
       return(
       <form onSubmit={(e)=> { return props.handleSubmit(e),input.value=''}} className="new-room-form">
       <TextField

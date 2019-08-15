@@ -4,16 +4,17 @@ import {joinRoom,getMessages} from '../actions/Index'
 
 const mapStateProps=state=> ({
   rooms:state.rooms.joinableRooms,
-  user:state.user.userProporties
+  user:state.user.userProporties,
+  currentRoomId:state.rooms.currentRoomId
 })
 
 const mapDispatchProps=(dispatch)=>({
     dispatch:(room)=>{
-         console.log(room)
+      
         dispatch(joinRoom(room))
     },
-    subscribe:(roomId,user)=>{
-      dispatch(joinRoom(roomId))
+    subscribe:(roomId,roomName,user)=>{
+      dispatch(joinRoom(roomId,roomName))
    
 
 
@@ -22,7 +23,8 @@ const mapDispatchProps=(dispatch)=>({
         messageLimit: 100,
         hooks: {
          onMessage:(message)=>  {    
-            const message1=[message.senderId, message.text]
+           
+            const message1=[message.senderId, message.text, message.createdAt,message.sender.avatarURL]
             dispatch(getMessages((message1)))
           
          },

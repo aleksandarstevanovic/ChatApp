@@ -25,9 +25,9 @@ export const createRoom=room=>({
     payload:room
 })
 
-export const joinRoom=roomId=>({
+export const joinRoom=(roomId,roomName)=>({
     type:types.JOIN_ROOM,
-    payload:roomId
+    payload:{roomId,roomName}
 })
 
 export  const getMessages=message=>({

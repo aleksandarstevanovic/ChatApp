@@ -15,7 +15,7 @@ function* workerMessage(action){
          const getProporties=state=>state.user.userProporties
         const user=yield select(getProporties)
 
-        const getCurrentRoom=state=>state.rooms.currentRoom
+        const getCurrentRoom=state=>state.rooms.currentRoomId
         const currentRoom=yield select(getCurrentRoom)
        
         user.sendMessage({

@@ -19,7 +19,7 @@ import Container from '@material-ui/core/Container';
           },
         },
         paper: {
-          marginTop: theme.spacing(8),
+          marginTop: theme.spacing(20),
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -58,8 +58,8 @@ import Container from '@material-ui/core/Container';
       fullWidth
       id="email"
       label="Enter username"
-      name="email"
-      autoComplete="email"
+      name="username"
+      
       autoFocus
       inputRef={node => {
         input = node;

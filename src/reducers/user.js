@@ -18,9 +18,10 @@ const user=(state=initialState,action)=>{
         })
     }
     else if(action.type===types.USER_PROPORTIES){
-      
+       
         return Object.assign({},state,{  
-         userProporties:action.payload
+         userProporties:action.payload,
+         user:action.payload.users
         
         })
     }

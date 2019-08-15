@@ -10,9 +10,10 @@ function* watchSubscribe(){
 
 function* joinRoom(action){
     try{
+       
         yield put ({type:types.CLEAR_MESSAGES})
-        const roomId=action.payload   
-        if(roomId) yield put ({type:types.ENTER_ROOM, payload:roomId})
+        const roomId=action.payload.roomId   
+        if(roomId) yield put ({type:types.ENTER_ROOM, payload:action.payload})
 
     }
     catch(e){
@@ -22,9 +23,8 @@ function* joinRoom(action){
 }
 
 function* getMessages(message){
-       console.log(message.payload)
-    yield put ({type:types.MESSAGE_SENT,payload:message.payload})
-    
+       
+    yield put ({type:types.MESSAGE_SENT,payload:message.payload})  
    }
 
 export default watchSubscribe
